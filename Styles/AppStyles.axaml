@@ -16,6 +16,13 @@
         <Setter Property="VerticalAlignment" Value="Top" />
     </Style>
 
+    <Style Selector="Label[Tag=ActionString]">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+
     <Style Selector="Label[Tag=SlotNumber]">
         <Setter Property="Foreground" Value="White" />
         <Setter Property="FontWeight" Value="Bold" />
@@ -91,6 +98,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Background" Value="#000000ff" />
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
 
         <Setter Property="Transitions">
             <Transitions>
@@ -104,7 +112,6 @@
         <Setter Property="Height" Value="30" />
         <Setter Property="Width" Value="200" />
         <Setter Property="BorderBrush" Value="rgba(224, 216, 105, 1)" />
-        <Setter Property="BorderThickness" Value="2" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="Margin" Value="5" />
@@ -118,7 +125,6 @@
         <Setter Property="Height" Value="30" />
         <Setter Property="Width" Value="50" />
         <Setter Property="BorderBrush" Value="rgba(255, 82, 82, 1)" />
-        <Setter Property="BorderThickness" Value="2" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
     </Style>

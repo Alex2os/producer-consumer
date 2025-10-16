@@ -1,10 +1,12 @@
 <UserControl
     x:Class="ProducerConsumer.SimulationPage"
     xmlns="https://github.com/avaloniaui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:progRing="clr-namespace:AvaloniaProgressRing;assembly=AvaloniaProgressRing">
 
     <UserControl.Styles>
         <StyleInclude Source="Styles/AppStyles.axaml" />
+        <StyleInclude Source="avares://AvaloniaProgressRing/Styles/ProgressRing.xaml" />
     </UserControl.Styles>
 
     <Border Tag="MainBorder">
@@ -13,16 +15,27 @@
             RowDefinitions="Auto, Auto, *"
             Tag="MainGrid">
 
-            <Grid Grid.Row="0" RowDefinitions = "*" ColumnDefinitions = "*, *" VerticalAlignment="Top">
-                <Label Grid.Row="0" Grid.Column = "0" Tag="MainTitle">Productor-Consumidor</Label>
+            <Grid
+                Grid.Row="0"
+                VerticalAlignment="Top"
+                ColumnDefinitions="*, *"
+                RowDefinitions="*">
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Tag="MainTitle">
+                    Productor-Consumidor
+                </Label>
 
                 <Button
                     Grid.Row="0"
                     Grid.Column="1"
                     Classes="ButtonTemplate"
-                    Tag = "ExitButton">
+                    Tag="ExitButton">
                     Salir
                 </Button>
+
+
             </Grid>
 
 
@@ -83,12 +96,29 @@
                     Acciones
                 </Label>
 
-                <Label
-                    x:Name="ActionString"
+                <StackPanel
                     Grid.Row="1"
-                    Grid.Column="0">
-                    example
-                </Label>
+                    Grid.Column="0"
+                    Orientation="Horizontal">
+                    <Label
+                        x:Name="ActionString"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Tag="ActionString" />
+
+                    <progRing:ProgressRing
+                        Width="30"
+                        Height="30"
+                        Margin="10,20,0,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        x:Name = "ProgressRing"
+                        Foreground="rgba(196, 105, 224, 1)"
+                        IsActive="True" />
+
+                </StackPanel>
+
+
 
                 <Border
                     Grid.Row="0"
@@ -101,7 +131,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     Classes="ButtonTemplate"
-                    Tag = "PauseButton">
+                    Tag="PauseButton">
                     Pausar simulación
                 </Button>
 

@@ -72,3 +72,6 @@ C:\Users\imale\OneDrive\Escritorio\ProducerConsumer\obj\Debug\net9.0\ProducerCon
 C:\Users\imale\OneDrive\Escritorio\ProducerConsumer\obj\Debug\net9.0\ProducerConsumer.genruntimeconfig.cache
 C:\Users\imale\OneDrive\Escritorio\ProducerConsumer\obj\Debug\net9.0\ref\ProducerConsumer.dll
 c:\Users\imale\OneDrive\Escritorio\ProducerConsumer\obj\Debug\net9.0\ProducerConsumer.sourcelink.json
+c:\Users\imale\OneDrive\Escritorio\ProducerConsumer\bin\Debug\net9.0\Avalonia.Controls.DataGrid.dll
+c:\Users\imale\OneDrive\Escritorio\ProducerConsumer\bin\Debug\net9.0\AvaloniaProgressRing.dll
+c:\Users\imale\OneDrive\Escritorio\ProducerConsumer\bin\Debug\net9.0\FluentAvalonia.dll
