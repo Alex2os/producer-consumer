@@ -1,0 +1,65 @@
+<UserControl
+    x:Class="ProducerConsumer.SimulationPage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <UserControl.Styles>
+        <StyleInclude Source="Styles/AppStyles.axaml" />
+    </UserControl.Styles>
+
+    <Border Tag="MainBorder">
+        <Grid
+            ColumnDefinitions="*"
+            RowDefinitions="*, *, *"
+            Tag="MainGrid">
+
+            <Label Grid.Row="0" Tag="MainTitle">Productor-Consumidor</Label>
+
+            <Grid Grid.Row="1" RowDefinitions="*, *, *">
+                <Label Grid.Row="0">Productor</Label>
+
+                <Grid Grid.Row="1">
+
+                    <ItemsControl x:Name="SlotsPanel">
+
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <!--  we use this to assign the order of the elements. in this case we want them to me horizontal.  -->
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <!-- the following is the template for each border and its label.-->
+                                <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+                                    <Border Tag="SlotBorder" />
+                                    <Label Tag = "SlotNumber" Content="{Binding}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+
+                </Grid>
+                <Label Grid.Row="2">Consumidor</Label>
+            </Grid>
+
+
+            <Grid
+                Grid.Row="2"
+                ColumnDefinitions="*"
+                RowDefinitions="*, *">
+
+                <Label Grid.Row="0" Tag = "Subtitle">Acciones</Label>
+
+                <Label Grid.Row="1" x:Name = "ActionString">example</Label>
+
+            </Grid>
+
+        </Grid>
+
+
+    </Border>
+
+</UserControl>
