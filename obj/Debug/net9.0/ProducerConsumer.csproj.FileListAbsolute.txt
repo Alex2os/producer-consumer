@@ -71,3 +71,4 @@ C:\Users\imale\OneDrive\Escritorio\ProducerConsumer\obj\Debug\net9.0\refint\Prod
 C:\Users\imale\OneDrive\Escritorio\ProducerConsumer\obj\Debug\net9.0\ProducerConsumer.pdb
 C:\Users\imale\OneDrive\Escritorio\ProducerConsumer\obj\Debug\net9.0\ProducerConsumer.genruntimeconfig.cache
 C:\Users\imale\OneDrive\Escritorio\ProducerConsumer\obj\Debug\net9.0\ref\ProducerConsumer.dll
+c:\Users\imale\OneDrive\Escritorio\ProducerConsumer\obj\Debug\net9.0\ProducerConsumer.sourcelink.json

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wzSSzoCX5V4=",
+  "dgSpecHash": "45WWl+GoPhQ=",
   "success": true,
-  "projectFilePath": "c:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj",
+  "projectFilePath": "C:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\imale\\.nuget\\packages\\avalonia\\11.3.4\\avalonia.11.3.4.nupkg.sha512",
     "C:\\Users\\imale\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.25547.20250602\\avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",

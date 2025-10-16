@@ -10,18 +10,36 @@
     <Border Tag="MainBorder">
         <Grid
             ColumnDefinitions="*"
-            RowDefinitions="*, *, *"
+            RowDefinitions="Auto, Auto, *"
             Tag="MainGrid">
 
-            <Label Grid.Row="0" Tag="MainTitle">Productor-Consumidor</Label>
+            <Grid Grid.Row="0" RowDefinitions = "*" ColumnDefinitions = "*, *" VerticalAlignment="Top">
+                <Label Grid.Row="0" Grid.Column = "0" Tag="MainTitle">Productor-Consumidor</Label>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Classes="ButtonTemplate"
+                    Tag = "ExitButton">
+                    Salir
+                </Button>
+            </Grid>
+
 
             <Grid Grid.Row="1" RowDefinitions="*, *, *">
-                <Label Grid.Row="0">Productor</Label>
 
+                <!--  producer  -->
+                <PathIcon
+                    Grid.Row="0"
+                    Width="20"
+                    Height="20"
+                    Margin="0,0,0,10"
+                    Data="M5,0 L5,10 M0,5 L5,10 L10,5"
+                    Foreground="rgba(196, 105, 224, 1)" />
+
+                <!--  slots  -->
                 <Grid Grid.Row="1">
-
                     <ItemsControl x:Name="SlotsPanel">
-
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <!--  we use this to assign the order of the elements. in this case we want them to me horizontal.  -->
@@ -31,10 +49,10 @@
 
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <!-- the following is the template for each border and its label.-->
+                                <!--  the following is the template for each border and its label.  -->
                                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                                     <Border Tag="SlotBorder" />
-                                    <Label Tag = "SlotNumber" Content="{Binding}" />
+                                    <Label Content="{Binding}" Tag="SlotNumber" />
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -42,18 +60,50 @@
 
 
                 </Grid>
-                <Label Grid.Row="2">Consumidor</Label>
+
+                <!--  consumer  -->
+                <PathIcon
+                    Grid.Row="2"
+                    Width="20"
+                    Height="20"
+                    Data="M5,10 L5,0 M0,5 L5,0 L10,5"
+                    Foreground="rgba(224, 216, 105, 1)" />
             </Grid>
 
 
             <Grid
                 Grid.Row="2"
-                ColumnDefinitions="*"
+                ColumnDefinitions="*, *"
                 RowDefinitions="*, *">
 
-                <Label Grid.Row="0" Tag = "Subtitle">Acciones</Label>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Tag="Subtitle">
+                    Acciones
+                </Label>
 
-                <Label Grid.Row="1" x:Name = "ActionString">example</Label>
+                <Label
+                    x:Name="ActionString"
+                    Grid.Row="1"
+                    Grid.Column="0">
+                    example
+                </Label>
+
+                <Border
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Tag="TimeBorder">
+                    <Label x:Name="time_label">Tiempo global:</Label>
+                </Border>
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Classes="ButtonTemplate"
+                    Tag = "PauseButton">
+                    Pausar simulación
+                </Button>
 
             </Grid>
 

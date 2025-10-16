@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj": {}
+    "C:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj": {}
   },
   "projects": {
-    "c:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj": {
+    "C:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj",
+        "projectUniqueName": "C:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj",
         "projectName": "ProducerConsumer",
-        "projectPath": "c:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj",
+        "projectPath": "C:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj",
         "packagesPath": "C:\\Users\\imale\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\obj\\",
+        "outputPath": "C:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

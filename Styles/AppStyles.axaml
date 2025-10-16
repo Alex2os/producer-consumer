@@ -51,7 +51,80 @@
     </Style>
 
     <Style Selector="Border[Tag=SlotBorder]:pointerover">
-        <Setter Property="Background" Value="rgba(166, 75, 194, 1)" />
+        <Setter Property="Background" Value="rgba(196, 105, 224, 1)" />
+    </Style>
+
+    <Style Selector="Border[Tag=TimeBorder]">
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="BorderBrush" Value="rgba(196, 105, 224, 1)" />
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Margin" Value="5 5 5 20" />
+    </Style>
+
+    <!--  we create a class to override the template when a button is hovered. this help us to make our own templates, so the button hovered now is not a problem. all this is done so we can have a smooth hover.  -->
+    <Style Selector="Button.ButtonTemplate">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <!--  here in the border we put the properties we want to have by default. in this case we just want as default the bg, borderbrush and borderthickness. also we need the things inside the contentpresenter, so the text we put inside the button appears.  -->
+                <Border
+                    x:Name="root"
+                    Padding="0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+
+                    <ContentPresenter
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        TextBlock.Foreground="{TemplateBinding Foreground}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+        <!--  after setting the template and the button class, we now can do all the things we need to do, like styling, transitions, etc. in this case we do this in the other tags for the buttons, as this is the main class for the buttons used in this app. -->
+        <!-- here, some properties that can be global to all buttons are put here.-->
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="#000000ff" />
+
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.15" />
+            </Transitions>
+        </Setter>
+    </Style>
+
+    <Style Selector="Button[Tag=PauseButton]">
+
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="200" />
+        <Setter Property="BorderBrush" Value="rgba(224, 216, 105, 1)" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="5" />
+    </Style>
+
+    <Style Selector="Button[Tag=PauseButton]:pointerover">
+        <Setter Property="Background" Value="rgba(224, 216, 105, 0.7)" />
+    </Style>
+
+    <Style Selector="Button[Tag=ExitButton]">        
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="50" />
+        <Setter Property="BorderBrush" Value="rgba(255, 82, 82, 1)" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <Style Selector="Button[Tag=ExitButton]:pointerover">
+        <Setter Property="Background" Value="rgba(255, 82, 82, 0.7)" />
     </Style>
 
 </Styles>
