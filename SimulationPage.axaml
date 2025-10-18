@@ -22,6 +22,8 @@
                 VerticalAlignment="Top"
                 ColumnDefinitions="*, *"
                 RowDefinitions="*">
+
+                <!--  app title  -->
                 <Label
                     Grid.Row="0"
                     Grid.Column="0"
@@ -29,12 +31,13 @@
                     Productor-Consumidor
                 </Label>
 
+                <!--  exit button  -->
                 <Button
                     Grid.Row="0"
                     Grid.Column="1"
                     Classes="ButtonTemplate"
-                    Tag="ExitButton"
-                    Click = "ExitApp">
+                    Click="ExitApp"
+                    Tag="ExitButton">
                     Salir
                 </Button>
 
@@ -44,14 +47,21 @@
 
             <Grid Grid.Row="1" RowDefinitions="*, *, *">
 
-                <!--  producer  -->
-                <PathIcon
-                    Grid.Row="0"
-                    Width="20"
-                    Height="20"
-                    Margin="0,0,0,10"
-                    Data="M5,0 L5,10 M0,5 L5,10 L10,5"
-                    Foreground="rgba(196, 105, 224, 1)" />
+                <Canvas Grid.Row="0" Height="30">
+                    <!--  producer  -->
+                    <PathIcon
+                        x:Name="producer"
+                        Width="20"
+                        Height="20"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Left"
+                        Data="M5,0 L5,10 M0,5 L5,10 L10,5"
+                        Foreground="rgba(196, 105, 224, 1)">
+                        <PathIcon.RenderTransform>
+                            <TranslateTransform X="0" Y="0" />
+                        </PathIcon.RenderTransform>
+                    </PathIcon>
+                </Canvas>
 
                 <!--  slots  -->
                 <Grid Grid.Row="1">
@@ -68,8 +78,12 @@
                                 <!--  the following is the template for each border and its label.  -->
                                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                                     <Border Tag="SlotBorder">
-                                        <Label VerticalAlignment = "Center" HorizontalAlignment = "Center" Content = "{Binding emoji}" FontSize = "20"/>
-                                        </Border>
+                                        <Label
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Content="{Binding emoji}"
+                                            FontSize="20" />
+                                    </Border>
                                     <Label Content="{Binding slot_number}" Tag="SlotNumber" />
                                 </StackPanel>
                             </DataTemplate>
@@ -79,64 +93,140 @@
 
                 </Grid>
 
-                <!--  consumer  -->
-                <PathIcon
-                    Grid.Row="2"
-                    Width="20"
-                    Height="20"
-                    Data="M5,10 L5,0 M0,5 L5,0 L10,5"
-                    Foreground="rgba(224, 216, 105, 1)" />
+                <Canvas Grid.Row="2" Height="30">
+                    <!--  consumer  -->
+                    <PathIcon
+                        x:Name="consumer"
+                        Width="20"
+                        Height="20"
+                        HorizontalAlignment="Left"
+                        Data="M5,10 L5,0 M0,5 L5,0 L10,5"
+                        Foreground="rgba(224, 216, 105, 1)">
+                        <PathIcon.RenderTransform>
+                            <TranslateTransform X="0" Y="0" />
+                        </PathIcon.RenderTransform>
+                    </PathIcon>
+
+                </Canvas>
             </Grid>
 
 
             <Grid
                 Grid.Row="2"
-                ColumnDefinitions="*, *"
-                RowDefinitions="*, *">
-
-                <Label
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Tag="Subtitle">
-                    Acciones
-                </Label>
+                ColumnDefinitions="*, *, *"
+                RowDefinitions="*">
 
                 <StackPanel
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Orientation="Horizontal" Spacing = "5">
+                    Grid.Row="0"
+                    Grid.Column=""
+                    Orientation="Vertical">
+                    <!--  actions title  -->
                     <Label
-                        x:Name="ActionString"
-                        Grid.Row="1"
+                        Grid.Row="0"
                         Grid.Column="0"
-                        Tag="ActionString" />
+                        Tag="Subtitle">
+                        Acciones
+                    </Label>
 
-                    <progRing:ProgressRing
-                        Width="30"
-                        Height="30"
-                        Margin="10,20,0,0"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Top"
-                        x:Name = "ProgressRing"
-                        Foreground="rgba(196, 105, 224, 1)"
-                        IsActive="True" />
+                    <!--  border for the actionsstring and the progressring.  -->
+                    <Border Tag="ActionsBorder">
+                        <StackPanel
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Orientation="Vertical"
+                            Spacing="5">
+                            <!--  action string label  -->
+                            <Label
+                                x:Name="ActionString"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Tag="ActionString" />
+
+                            <!--  progress ring  -->
+                            <progRing:ProgressRing
+                                x:Name="ProgressRing"
+                                Width="30"
+                                Height="30"
+                                Margin="10,20,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="rgba(196, 105, 224, 1)"
+                                IsActive="True" />
+                        </StackPanel>
+                    </Border>
 
                 </StackPanel>
 
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Orientation="Vertical">
+                    <Label Tag="Subtitle">
+                        Controles
+                    </Label>
 
+                    <Border Tag="ControlsBorder">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal"
+                            Spacing="10">
+                            <Button
+                                Classes="ButtonTemplate SpeedButton"
+                                Click="SpeedOne"
+                                Tag="SpeedButtonVariant1">
+                                X1
+                            </Button>
+                            <Button
+                                Classes="ButtonTemplate SpeedButton"
+                                Click="SpeedTwo"
+                                Tag="SpeedButtonVariant2">
+                                X2
+                            </Button>
+                            <Button
+                                Classes="ButtonTemplate SpeedButton"
+                                Click="SpeedThree"
+                                Tag="SpeedButtonVariant3">
+                                X3
+                            </Button>
+                            <Button
+                                Classes="ButtonTemplate SpeedButton"
+                                Click="SpeedFour"
+                                Tag="SpeedButtonVariant4">
+                                X4
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
 
                 <Border
                     Grid.Row="0"
-                    Grid.Column="1"
-                    Tag="EatenItemsBorder">
-                    <Label x:Name="eaten_items_label">Objetos consumidos: 0</Label>
-                </Border>
+                    Grid.Column="2"
+                    HorizontalAlignment="Right">
 
-                <Border
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Tag="ProducedItemsBorder">
-                    <Label x:Name="produced_items_label">Objetos producidos: 0</Label>
+                    <StackPanel Orientation="Vertical" Spacing="5">
+
+                        <!--  information title  -->
+                        <Label Tag="Subtitle">
+                            Información
+                        </Label>
+
+                        <!--  consumed items  -->
+                        <Border Classes="InfoBorders">
+                            <Label x:Name="consumed_items_label">Objetos consumidos: 0</Label>
+                        </Border>
+
+                        <!--  produced items  -->
+                        <Border Classes="InfoBorders">
+                            <Label x:Name="produced_items_label">Objetos producidos: 0</Label>
+                        </Border>
+
+                        <!-- speed label-->
+                        <Border Classes="InfoBorders">
+                            <Label x:Name = "speed_label">Velocidad: X1</Label>
+                        </Border>
+
+                    </StackPanel>
                 </Border>
 
             </Grid>
