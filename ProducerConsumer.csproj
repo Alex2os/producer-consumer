@@ -6,6 +6,7 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+     <ApplicationIcon>assets\producon_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

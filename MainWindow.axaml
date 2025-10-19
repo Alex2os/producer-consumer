@@ -7,7 +7,7 @@
         Width="1200"
         Height="450"
         CanResize="False"
-        Title="Productor Consumidor">
+        Title="ProduCon">
         
     <ContentControl x:Name="MainContent" />
 

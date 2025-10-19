@@ -24,12 +24,15 @@
                 RowDefinitions="*">
 
                 <!--  app title  -->
-                <Label
+                <StackPanel
                     Grid.Row="0"
                     Grid.Column="0"
-                    Tag="MainTitle">
-                    Productor-Consumidor
-                </Label>
+                    Orientation="Horizontal"
+                    Spacing = "10">
+                    <Label Tag="MainTitle">
+                        ProduCon
+                    </Label>
+                </StackPanel>
 
                 <!--  exit button  -->
                 <Button
@@ -65,7 +68,7 @@
 
                 <!--  slots  -->
                 <Grid Grid.Row="1">
-                    <ItemsControl x:Name="SlotsPanel" ItemsSource="{Binding EmojisCollection}">
+                    <ItemsControl x:Name="SlotsPanel" ItemsSource="{Binding SlotsCollection}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <!--  we use this to assign the order of the elements. in this case we want them to me horizontal.  -->
@@ -221,9 +224,9 @@
                             <Label x:Name="produced_items_label">Objetos producidos: 0</Label>
                         </Border>
 
-                        <!-- speed label-->
+                        <!--  speed label  -->
                         <Border Classes="InfoBorders">
-                            <Label x:Name = "speed_label">Velocidad: X1</Label>
+                            <Label x:Name="speed_label">Velocidad: X1</Label>
                         </Border>
 
                     </StackPanel>

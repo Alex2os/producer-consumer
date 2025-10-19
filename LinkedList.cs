@@ -28,7 +28,7 @@ namespace ProducerConsumer
                 if (i == actual_producer_vertex)
                 {
                     temp_node.value = _value;
-                    collections_vm.EmojisCollection[i].AssignEmoji(_value);
+                    collections_vm.SlotsCollection[i].AssignEmoji(_value);
                     break;
                 }
 
@@ -48,7 +48,7 @@ namespace ProducerConsumer
                 if (i == actual_consumer_vertex)
                 {
                     temp_node.value = "";
-                    collections_vm.EmojisCollection[i].AssignEmoji("");
+                    collections_vm.SlotsCollection[i].AssignEmoji("");
                     break;
                 }
 
