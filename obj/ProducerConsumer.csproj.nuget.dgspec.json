@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj",
-        "projectName": "ProducerConsumer",
+        "projectName": "ProduCon",
         "projectPath": "C:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\ProducerConsumer.csproj",
         "packagesPath": "C:\\Users\\imale\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\imale\\OneDrive\\Escritorio\\ProducerConsumer\\obj\\",
@@ -60,6 +60,8 @@
               "version": "[11.3.4, )"
             },
             "Avalonia.Diagnostics": {
+              "include": "None",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[11.3.4, )"
             },
