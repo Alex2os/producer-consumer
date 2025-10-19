@@ -145,7 +145,7 @@
     </Style>
 
     <Style Selector="Button[Tag=ExitButton]:pointerover">
-        <Setter Property="Background" Value="rgba(255, 82, 82, 0.7)" />
+        <Setter Property="Background" Value="rgba(255, 82, 82, 1)" />
     </Style>
 
     <!--  speed button class  -->
